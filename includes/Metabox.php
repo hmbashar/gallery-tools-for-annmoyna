@@ -53,16 +53,11 @@ class Metabox {
         wp_nonce_field('gtfa_gallery_details', 'gtfa_gallery_details_nonce');
 
         // Get saved values
-        $title = get_post_meta($post->ID, '_gtfa_gallery_title', true);
         $date = get_post_meta($post->ID, '_gtfa_gallery_date', true);
         $shortcode = get_post_meta($post->ID, '_gtfa_gallery_shortcode', true);
         $envira_gallery_id = get_post_meta($post->ID, '_gtfa_envira_gallery_id', true);
         ?>
         <div class="gtfa-meta-box-wrap">
-            <p>
-                <label for="gtfa_gallery_title"><?php esc_html_e('Gallery Title:', 'gallery-tools-for-annmoyna'); ?></label>
-                <input type="text" id="gtfa_gallery_title" name="gtfa_gallery_title" value="<?php echo esc_attr($title); ?>" class="widefat">
-            </p>
             <p>
                 <label for="gtfa_gallery_date"><?php esc_html_e('Gallery Date:', 'gallery-tools-for-annmoyna'); ?></label>
                 <input type="date" id="gtfa_gallery_date" name="gtfa_gallery_date" value="<?php echo esc_attr($date); ?>" class="widefat">
@@ -125,10 +120,6 @@ class Metabox {
         }
 
         // Save the meta field values
-        if (isset($_POST['gtfa_gallery_title'])) {
-            update_post_meta($post_id, '_gtfa_gallery_title', sanitize_text_field($_POST['gtfa_gallery_title']));
-        }
-
         if (isset($_POST['gtfa_gallery_date'])) {
             update_post_meta($post_id, '_gtfa_gallery_date', sanitize_text_field($_POST['gtfa_gallery_date']));
         }

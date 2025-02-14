@@ -72,19 +72,25 @@ class Shortcode {
                         margin-top: 15px;
                     }
                 </style>
+                <?php echo do_shortcode( '[envira-link id="402"]1st Annual Ann Moyna Foundation Memorial Fundraiser[/envira-link]' ); ?>
                 <?php
-                while ($query->have_posts()) : $query->the_post();
-                    $title = get_post_meta(get_the_ID(), '_gtfa_gallery_title', true);
+                while ($query->have_posts()) : $query->the_post();                    
                     $date = get_post_meta(get_the_ID(), '_gtfa_gallery_date', true);
                     $shortcode = get_post_meta(get_the_ID(), '_gtfa_gallery_shortcode', true);
+                    $gallery_id = get_post_meta(get_the_ID(), '_gtfa_envira_gallery_id', true);
                     ?>
                     <div class="gtfa-gallery-item">
-                        <h3 class="gtfa-gallery-title"><?php echo esc_html($title); ?></h3>
+                        <h3 class="gtfa-gallery-title"><?php the_title(); ?></h3>
                         <?php if ($date) : ?>
                             <div class="gtfa-gallery-date">
                                 <?php echo esc_html(date_i18n(get_option('date_format'), strtotime($date))); ?>
                             </div>
                         <?php endif; ?>
+                        <?php if ($gallery_id) :?>
+                            <div class="gtfa-gallery-shortcode">   
+                                <?php echo do_shortcode('[envira-link id="' . $gallery_id . '"]' . get_the_title() . '[/envira-link]');?>
+                            </div>
+                        <?php endif;?>
                         <?php if ($shortcode) : ?>
                             <div class="gtfa-gallery-shortcode">
                                 <?php echo do_shortcode($shortcode); ?>
