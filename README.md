@@ -85,4 +85,4 @@ This plugin is licensed under the GPL v2 or later.
 
 ---
 
-&copy; 2023 Gallery Tools for Annmoyna. All rights reserved.
+&copy; 2025 Md Abul Bashar. All rights reserved.
