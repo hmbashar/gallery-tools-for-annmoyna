@@ -1,0 +1,105 @@
+# Copyright (C) 2025 Md Abul Bashar
+# This file is distributed under the GPL v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Gallery Tools for Annmoyna 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/gallery-tools-for-annmoyna\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2025-02-14T13:46:20+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.11.0\n"
+"X-Domain: gallery-tools-for-annmoyna\n"
+
+#. Plugin Name of the plugin
+#: gallery-tools-for-annmoyna.php
+msgid "Gallery Tools for Annmoyna"
+msgstr ""
+
+#. Plugin URI of the plugin
+#: gallery-tools-for-annmoyna.php
+msgid "https://github.com/hmbashar/gallery-tools-for-event"
+msgstr ""
+
+#. Description of the plugin
+#: gallery-tools-for-annmoyna.php
+msgid "A gallery tools plugin for managing Envira gallery with additional metabox features."
+msgstr ""
+
+#. Author of the plugin
+#: gallery-tools-for-annmoyna.php
+msgid "Md Abul Bashar"
+msgstr ""
+
+#. Author URI of the plugin
+#: gallery-tools-for-annmoyna.php
+msgid "https://hmbashar.com"
+msgstr ""
+
+#: includes/Metabox.php:38
+msgid "Gallery Details"
+msgstr ""
+
+#: includes/Metabox.php:62
+msgid "Gallery Date:"
+msgstr ""
+
+#: includes/Metabox.php:66
+msgid "Gallery Shortcode:"
+msgstr ""
+
+#: includes/Metabox.php:70
+msgid "Select Envira Gallery:"
+msgstr ""
+
+#: includes/Metabox.php:72
+msgid "-- Select a Gallery --"
+msgstr ""
+
+#: includes/PostType.php:30
+#: includes/PostType.php:32
+msgid "Gallery Events"
+msgstr ""
+
+#: includes/PostType.php:31
+msgid "Gallery Event"
+msgstr ""
+
+#: includes/PostType.php:33
+msgid "Add New"
+msgstr ""
+
+#: includes/PostType.php:34
+msgid "Add New Gallery Event"
+msgstr ""
+
+#: includes/PostType.php:35
+msgid "Edit Gallery Event"
+msgstr ""
+
+#: includes/PostType.php:36
+msgid "New Gallery Event"
+msgstr ""
+
+#: includes/PostType.php:37
+msgid "View Gallery Event"
+msgstr ""
+
+#: includes/PostType.php:38
+msgid "Search Gallery Events"
+msgstr ""
+
+#: includes/PostType.php:39
+msgid "No gallery events found"
+msgstr ""
+
+#: includes/PostType.php:40
+msgid "No gallery events found in trash"
+msgstr ""
+
+#: includes/Shortcode.php:46
+msgid "Click to View Photos"
+msgstr ""
