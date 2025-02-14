@@ -1,0 +1,11 @@
+{
+  "devDependencies": {
+    "dir-archiver": "^2.1.0"
+  },
+  "scripts": {
+    "clean": "find . -name '.DS_Store' -type f -delete",
+    "make-pot": "composer run-script make-pot",
+    "install-prod": "composer install --no-dev",
+    "bundle": "npm run clean && npm run make-pot && npm run install-prod && dir-archiver --src . --dest ../gallery-tools-for-annmoyna.zip --exclude '**/.DS_Store' .git .distignore .gitattributes .github .gitignore .wordpress-org README.md composer.lock node_modules package-lock.json package.json phpcs.xml.dist"
+  }
+}

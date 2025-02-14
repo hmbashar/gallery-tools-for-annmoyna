@@ -10,5 +10,8 @@
     },
     "require": {
         "php": ">=7.4"
+    },
+    "scripts": {
+        "make-pot": "wp i18n make-pot . languages/gallery-tools-for-annmoyna.pot"
     }
 }
