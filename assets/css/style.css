@@ -6,35 +6,96 @@
 }
 
 .gtfa-gallery-item {
-    background: #fff;
+    background: #eeeeee;
     border: 1px solid #ddd;
     padding: 15px;
     border-radius: 5px;
+    position: relative;
 }
-
-.gtfa-gallery-title {
-    font-size: 1.2em;
+.gtfa-gallery-hover {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    padding: 30px;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.4s ease;
+    transform: scale(0);
+}
+.gtfa-gallery-item:hover .gtfa-gallery-hover {
+    visibility: visible;
+    opacity: 1;
+    transform: scale(1);
+    transition: all 0.4s ease;
+}
+.gtfa-gallery-item:before{
+    background-color:#2a4194;
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0;
+    left:0;
+    content:'';
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    visibility: hidden;
+    opacity: 0;
+    transform: scale(0);
+}
+.gtfa-gallery-item:hover:before{
+    visibility: visible;
+    opacity: 0.9;
+    transform: scale(1);
+    transition: all 0.3s ease;
+}
+.gtfa-gallery-shortcode > a.envira-gallery-links {
+    font-size: 1.4em;
     margin-bottom: 10px;
-    color: #333;
+    color: #ffffff;
+    text-decoration: none;
+    height: 100%;
+    display: flex;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    justify-content: center;
 }
-
+.gtfa-gallery-item-normal {
+    text-align: center;
+}
+.gtfa-gallery-item-normal .gtfa-gallery-title {
+    color: #2a4194;
+    font-size: 1em;
+    margin: 0;
+    margin-bottom: 0;
+}
 .gtfa-gallery-date {
     color: #666;
     font-size: 0.9em;
-    margin-bottom: 10px;
 }
 
 .gtfa-gallery-shortcode {
     margin-top: 15px;
 }
 
-.gtfa-gallery-thumbnail {
-    margin-bottom: 15px;
-}
-
 .gtfa-gallery-thumbnail img {
     width: 100%;
     height: auto;
-    border-radius: 5px;
     display: block;
+    border: 1px solid #a5a5a5;
+    padding: 6px;
+    border-radius: 5px;
+    background-color: #fff;
 }
