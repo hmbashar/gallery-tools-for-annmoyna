@@ -56,6 +56,7 @@ class Metabox {
         $title = get_post_meta($post->ID, '_gtfa_gallery_title', true);
         $date = get_post_meta($post->ID, '_gtfa_gallery_date', true);
         $shortcode = get_post_meta($post->ID, '_gtfa_gallery_shortcode', true);
+        $envira_gallery_id = get_post_meta($post->ID, '_gtfa_envira_gallery_id', true);
         ?>
         <div class="gtfa-meta-box-wrap">
             <p>
@@ -69,6 +70,29 @@ class Metabox {
             <p>
                 <label for="gtfa_gallery_shortcode"><?php esc_html_e('Gallery Shortcode:', 'gallery-tools-for-annmoyna'); ?></label>
                 <input type="text" id="gtfa_gallery_shortcode" name="gtfa_gallery_shortcode" value="<?php echo esc_attr($shortcode); ?>" class="widefat">
+            </p>
+            <p>
+                <label for="gtfa_envira_gallery"><?php esc_html_e('Select Envira Gallery:', 'gallery-tools-for-annmoyna'); ?></label>
+                <select id="gtfa_envira_gallery" name="gtfa_envira_gallery" class="widefat">
+                    <option value=""><?php esc_html_e('-- Select a Gallery --', 'gallery-tools-for-annmoyna'); ?></option>
+                    <?php
+                    $envira_galleries = get_posts(array(
+                        'post_type' => 'envira',
+                        'posts_per_page' => -1,
+                        'orderby' => 'title',
+                        'order' => 'ASC'
+                    ));
+                    
+                    foreach ($envira_galleries as $gallery) {
+                        printf(
+                            '<option value="%s" %s>%s</option>',
+                            esc_attr($gallery->ID),
+                            selected($envira_gallery_id, $gallery->ID, false),
+                            esc_html($gallery->post_title)
+                        );
+                    }
+                    ?>
+                </select>
             </p>
         </div>
         <?php
@@ -111,6 +135,11 @@ class Metabox {
 
         if (isset($_POST['gtfa_gallery_shortcode'])) {
             update_post_meta($post_id, '_gtfa_gallery_shortcode', sanitize_text_field($_POST['gtfa_gallery_shortcode']));
+        }
+
+        // Save Envira gallery ID
+        if (isset($_POST['gtfa_envira_gallery'])) {
+            update_post_meta($post_id, '_gtfa_envira_gallery_id', absint($_POST['gtfa_envira_gallery']));
         }
     }
 }

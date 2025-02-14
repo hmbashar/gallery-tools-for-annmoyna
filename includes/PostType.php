@@ -53,7 +53,7 @@ class PostType {
             'hierarchical'        => false,
             'menu_position'       => 5,
             'menu_icon'           => 'dashicons-format-gallery',
-            'supports'            => array('title', 'editor', 'thumbnail'),
+            'supports'            => array('title'),
         );
 
         register_post_type(self::POST_TYPE, $args);
