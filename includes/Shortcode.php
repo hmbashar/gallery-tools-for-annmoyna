@@ -18,6 +18,14 @@ class Shortcode {
      */
     public function __construct() {
         add_shortcode('gallery_events', array($this, 'render_gallery_events'));
+        add_action('wp_enqueue_scripts', array($this, 'enqueue_styles'));
+    }
+
+    /**
+     * Enqueue required styles
+     */
+    public function enqueue_styles() {
+        wp_enqueue_style('gtfa-styles', GTFA_PLUGIN_URL . 'assets/css/style.css', array(), GTFA_VERSION);
     }
 
     /**
@@ -45,42 +53,6 @@ class Shortcode {
         if ($query->have_posts()) :
             ?>
             <div class="gtfa-gallery-grid">
-                <style>
-                    .gtfa-gallery-grid {
-                        display: grid;
-                        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-                        gap: 20px;
-                        padding: 20px 0;
-                    }
-                    .gtfa-gallery-item {
-                        background: #fff;
-                        border: 1px solid #ddd;
-                        padding: 15px;
-                        border-radius: 5px;
-                    }
-                    .gtfa-gallery-title {
-                        font-size: 1.2em;
-                        margin-bottom: 10px;
-                        color: #333;
-                    }
-                    .gtfa-gallery-date {
-                        color: #666;
-                        font-size: 0.9em;
-                        margin-bottom: 10px;
-                    }
-                    .gtfa-gallery-shortcode {
-                        margin-top: 15px;
-                    }
-                    .gtfa-gallery-thumbnail {
-                        margin-bottom: 15px;
-                    }
-                    .gtfa-gallery-thumbnail img {
-                        width: 100%;
-                        height: auto;
-                        border-radius: 5px;
-                        display: block;
-                    }
-                </style>           
                 <?php
                 while ($query->have_posts()) : $query->the_post();                    
                     $date = get_post_meta(get_the_ID(), '_gtfa_gallery_date', true);

@@ -1,0 +1,40 @@
+.gtfa-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.gtfa-gallery-item {
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.gtfa-gallery-title {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.gtfa-gallery-date {
+    color: #666;
+    font-size: 0.9em;
+    margin-bottom: 10px;
+}
+
+.gtfa-gallery-shortcode {
+    margin-top: 15px;
+}
+
+.gtfa-gallery-thumbnail {
+    margin-bottom: 15px;
+}
+
+.gtfa-gallery-thumbnail img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    display: block;
+}
