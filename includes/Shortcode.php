@@ -42,7 +42,8 @@ class Shortcode
         $atts = shortcode_atts(array(
             'posts_per_page' => -1,
             'orderby' => 'date',
-            'order' => 'DESC'
+            'order' => 'DESC',
+            'link_text' => 'Click to View Photos'
         ), $atts);
 
         $query = new \WP_Query(array(
@@ -101,7 +102,7 @@ class Shortcode
                         <div class="gtfa-gallery-hover">
                             <?php if ($gallery_id): ?>
                                 <div class="gtfa-gallery-shortcode">
-                                    <?php echo do_shortcode('[envira-link id="' . $gallery_id . '"]Click to view photos[/envira-link]'); ?>
+                                    <?php echo do_shortcode('[envira-link id="' . $gallery_id . '"]' . esc_html($atts['link_text']) . '[/envira-link]'); ?>
                                 </div>
                             <?php endif; ?>
                         </div><!-- Hover -->
