@@ -1,0 +1,14 @@
+{
+    "name": "hmbashar/gallery-tools-for-annmoyna",
+    "description": "A gallery tools plugin for managing Envira gallery with additional metabox features",
+    "type": "wordpress-plugin",
+    "license": "GPL-2.0-or-later",
+    "autoload": {
+        "psr-4": {
+            "GTFA\\":"includes/"
+        }
+    },
+    "require": {
+        "php": ">=7.4"
+    }
+}
