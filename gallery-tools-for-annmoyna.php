@@ -28,6 +28,27 @@ class Gallery_Tools_For_Annmoyna {
     private static $instance = null;
 
     /**
+     * PostType instance.
+     *
+     * @var \GTFA\PostType
+     */
+    private $post_type;
+
+    /**
+     * Metabox instance.
+     *
+     * @var \GTFA\Metabox
+     */
+    private $metabox;
+
+    /**
+     * Shortcode instance.
+     *
+     * @var \GTFA\Shortcode
+     */
+    private $shortcode;
+
+    /**
      * Get plugin instance.
      *
      * @return Gallery_Tools_For_Annmoyna
@@ -71,9 +92,9 @@ class Gallery_Tools_For_Annmoyna {
      */
     private function init() {
         // Initialize PostType, Metabox and Shortcode
-        new \GTFA\PostType();
-        new \GTFA\Metabox();
-        new \GTFA\Shortcode();
+        $this->post_type = new \GTFA\PostType();
+        $this->metabox = new \GTFA\Metabox();
+        $this->shortcode = new \GTFA\Shortcode();
     }
 
     /**
