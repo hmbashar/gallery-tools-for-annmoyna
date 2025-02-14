@@ -49,7 +49,8 @@ class Shortcode
             'title_font_size' => '',
             'item_bg_color' => '',
             'date_color' => '',
-            'date_font_size' => ''
+            'date_font_size' => '',
+            'hover_bg_color' => ''
         ), $atts);
 
         $query_args = array(
@@ -72,6 +73,9 @@ class Shortcode
         if ($query->have_posts()):
             // Only output styles if custom values are provided
             $custom_styles = array();
+            if (!empty($atts['hover_bg_color'])) {
+                $custom_styles[] = '.gtfa-gallery-item:before { background: ' . esc_attr($atts['hover_bg_color']) . '; }';
+            }
             if (!empty($atts['item_bg_color'])) {
                 $custom_styles[] = '.gtfa-gallery-item { background: ' . esc_attr($atts['item_bg_color']) . '; }';
             }
