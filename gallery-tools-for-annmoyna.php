@@ -46,6 +46,7 @@ class Gallery_Tools_For_Annmoyna {
         $this->define_constants();
         $this->includes();
         $this->init_hooks();
+        $this->init();
     }
 
     /**
@@ -63,10 +64,16 @@ class Gallery_Tools_For_Annmoyna {
     private function includes() {
         // Load Composer's autoloader
         require_once GTFA_PLUGIN_DIR . 'vendor/autoload.php';
-        
-        // Initialize PostType and Metabox
+    }
+
+    /**
+     * Initialize plugin components.
+     */
+    private function init() {
+        // Initialize PostType, Metabox and Shortcode
         new \GTFA\PostType();
         new \GTFA\Metabox();
+        new \GTFA\Shortcode();
     }
 
     /**
