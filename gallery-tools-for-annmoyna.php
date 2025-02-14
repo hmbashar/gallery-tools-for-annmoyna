@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Gallery Tools for Annmoyna
- * Plugin URI: https://github.com/hmbashar/gallery-tools-for-annmoyna
+ * Plugin URI: https://github.com/hmbashar/gallery-tools-for-event
  * Description: A gallery tools plugin for managing Envira gallery with additional metabox features.
  * Version: 1.0.0
  * Author: Md Abul Bashar
