@@ -62,10 +62,10 @@ class Metabox {
                 <label for="gtfa_gallery_date"><?php esc_html_e('Gallery Date:', 'gallery-tools-for-annmoyna'); ?></label>
                 <input type="date" id="gtfa_gallery_date" name="gtfa_gallery_date" value="<?php echo esc_attr($date); ?>" class="widefat">
             </p>
-            <p>
+            <!-- <p>
                 <label for="gtfa_gallery_shortcode"><?php esc_html_e('Gallery Shortcode:', 'gallery-tools-for-annmoyna'); ?></label>
                 <input type="text" id="gtfa_gallery_shortcode" name="gtfa_gallery_shortcode" value="<?php echo esc_attr($shortcode); ?>" class="widefat">
-            </p>
+            </p> -->
             <p>
                 <label for="gtfa_envira_gallery"><?php esc_html_e('Select Envira Gallery:', 'gallery-tools-for-annmoyna'); ?></label>
                 <select id="gtfa_envira_gallery" name="gtfa_envira_gallery" class="widefat">
@@ -124,9 +124,9 @@ class Metabox {
             update_post_meta($post_id, '_gtfa_gallery_date', sanitize_text_field($_POST['gtfa_gallery_date']));
         }
 
-        if (isset($_POST['gtfa_gallery_shortcode'])) {
-            update_post_meta($post_id, '_gtfa_gallery_shortcode', sanitize_text_field($_POST['gtfa_gallery_shortcode']));
-        }
+        // if (isset($_POST['gtfa_gallery_shortcode'])) {
+        //     update_post_meta($post_id, '_gtfa_gallery_shortcode', sanitize_text_field($_POST['gtfa_gallery_shortcode']));
+        // }
 
         // Save Envira gallery ID
         if (isset($_POST['gtfa_envira_gallery'])) {

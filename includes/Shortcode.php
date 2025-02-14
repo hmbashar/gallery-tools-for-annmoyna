@@ -71,8 +71,16 @@ class Shortcode {
                     .gtfa-gallery-shortcode {
                         margin-top: 15px;
                     }
-                </style>
-                <?php echo do_shortcode( '[envira-link id="402"]1st Annual Ann Moyna Foundation Memorial Fundraiser[/envira-link]' ); ?>
+                    .gtfa-gallery-thumbnail {
+                        margin-bottom: 15px;
+                    }
+                    .gtfa-gallery-thumbnail img {
+                        width: 100%;
+                        height: auto;
+                        border-radius: 5px;
+                        display: block;
+                    }
+                </style>           
                 <?php
                 while ($query->have_posts()) : $query->the_post();                    
                     $date = get_post_meta(get_the_ID(), '_gtfa_gallery_date', true);
@@ -91,6 +99,14 @@ class Shortcode {
                     }
                     ?>
                     <div class="gtfa-gallery-item">
+                        <?php if ($gallery_id) :
+                            $thumbnail = get_the_post_thumbnail_url($gallery_id, 'medium');
+                            if ($thumbnail) : ?>
+                                <div class="gtfa-gallery-thumbnail">
+                                    <img src="<?php echo esc_url($thumbnail); ?>" alt="<?php echo esc_attr(get_the_title()); ?>">
+                                </div>
+                            <?php endif;
+                        endif; ?>
                         <h3 class="gtfa-gallery-title"><?php the_title(); ?></h3>
                         <?php if ($date) : ?>
                             <div class="gtfa-gallery-date">
