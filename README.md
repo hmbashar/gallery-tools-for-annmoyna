@@ -85,4 +85,6 @@ This plugin is licensed under the GPL v2 or later.
 
 ---
 
+Connect with the author: [Facebook](https://www.facebook.com/hmbashar/)
+
 &copy; 2025 Md Abul Bashar. All rights reserved.
